@@ -16,5 +16,6 @@ class TimelineViewModel {
     
     @objc func logoutClicked() {
         TwitterClient.shared.logOut()
+        
     }
 }

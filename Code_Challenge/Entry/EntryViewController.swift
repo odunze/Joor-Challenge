@@ -21,7 +21,8 @@ class EntryViewController: UIViewController {
     }()
     
     lazy var loginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 60, y: 60, width: 200, height: 50))
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .green
         button.setTitle("LOGIN HERE", for: .normal)
         button.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
@@ -30,7 +31,9 @@ class EntryViewController: UIViewController {
     
     lazy var container: UIStackView = {
         let stack = UIStackView(frame: .zero)
+        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
+        stack.spacing = 10
         return stack
     }()
     
@@ -46,13 +49,27 @@ class EntryViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        container.addArrangedSubview(userField)
+        container.addArrangedSubview(passField)
+        container.addArrangedSubview(loginButton)
+
+        view.addSubview(container)
         
-        view.addSubview(loginButton)
+        view.backgroundColor = .twitterBlue
         
-        view.backgroundColor = .blue
+        setConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setConstraints() {
+        //Container
+       
+        container.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        container.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        container.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        container.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
     }
 }
