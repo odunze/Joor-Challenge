@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C43DDC62369083E00B0846A /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDC52369083E00B0846A /* EntryViewController.swift */; };
 		4C43DDC82369084900B0846A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDC72369084900B0846A /* TimelineViewController.swift */; };
+		4C43DDCC23690A7700B0846A /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDCB23690A7700B0846A /* TweetCell.swift */; };
 		E39AD7CD50228EC0EFF63D84 /* Pods_Code_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCB362D8C5DED6F5762BA72 /* Pods_Code_ChallengeTests.framework */; };
 		E5391C1721AB788E0052B1EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5391C1621AB788E0052B1EA /* AppDelegate.swift */; };
 		E5391C1E21AB788E0052B1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5391C1D21AB788E0052B1EA /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		400A043A277466E1A85EDEBF /* Pods-Code_ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-Code_ChallengeTests/Pods-Code_ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C43DDC52369083E00B0846A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		4C43DDC72369084900B0846A /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		4C43DDCB23690A7700B0846A /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		6CAC04A367E1D7BC7BBC45DC /* Pods-Code_Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Code_Challenge/Pods-Code_Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		BE971E724CEA89C7D2105846 /* Pods-Code_Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_Challenge.release.xcconfig"; path = "Target Support Files/Pods-Code_Challenge/Pods-Code_Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		E5391C1321AB788E0052B1EA /* Code_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Code_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,13 +72,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C43DDC92369086100B0846A /* View Controllers */ = {
+		4C43DDC92369086100B0846A /* Entry */ = {
 			isa = PBXGroup;
 			children = (
 				4C43DDC52369083E00B0846A /* EntryViewController.swift */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		4C43DDCA23690A4400B0846A /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
 				4C43DDC72369084900B0846A /* TimelineViewController.swift */,
 			);
-			path = "View Controllers";
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 		A52B02F3C455D3E6A617D8B8 /* Frameworks */ = {
@@ -112,7 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				E5391C1621AB788E0052B1EA /* AppDelegate.swift */,
-				4C43DDC92369086100B0846A /* View Controllers */,
+				4C43DDC92369086100B0846A /* Entry */,
+				4C43DDCA23690A4400B0846A /* Timeline */,
 				E5391C3A21AB799D0052B1EA /* Models */,
 				E5391C3B21AB79A40052B1EA /* Services */,
 				E5391C3621AB789E0052B1EA /* Resources */,
@@ -143,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				E5391C3E21AB79D80052B1EA /* Tweet.swift */,
+				4C43DDCB23690A7700B0846A /* TweetCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 				E5391C3F21AB79D80052B1EA /* Tweet.swift in Sources */,
 				4C43DDC62369083E00B0846A /* EntryViewController.swift in Sources */,
 				E5391C3D21AB79D10052B1EA /* TwitterClient.swift in Sources */,
+				4C43DDCC23690A7700B0846A /* TweetCell.swift in Sources */,
 				E5391C1721AB788E0052B1EA /* AppDelegate.swift in Sources */,
 				4C43DDC82369084900B0846A /* TimelineViewController.swift in Sources */,
 			);
@@ -458,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -513,7 +525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
