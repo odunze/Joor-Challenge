@@ -6,4 +6,9 @@
 //  Copyright © 2019 JOOR. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class EntryViewController: UIViewController {
+    
+    
+}
