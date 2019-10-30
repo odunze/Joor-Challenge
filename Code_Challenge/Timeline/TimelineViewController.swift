@@ -14,29 +14,28 @@ class TimelineViewController: UITableViewController {
     
     let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logoutClicked))
     
-    @objc func logoutClicked() {
-        TwitterClient.shared.logOut()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        App.shared.navigation.navigationItem.rightBarButtonItem = logoutButton
-        
-        tableView.register(TweetCell.self, forCellReuseIdentifier: "tweetCell")
-        tableView.rowHeight = 85
+        self.navigationItem.rightBarButtonItem = logoutButton
         
         tableView.reloadData()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func viewDidLoad() {
+        tableView.register(TweetCell.self, forCellReuseIdentifier: "tweetCell")
+        tableView.rowHeight = 120
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
         cell.userLabel.text = "Username"
-        cell.contentLabel.text = "Hello darkness my old friend. I've come to play with you again. Because a softly sleeping."
+        cell.contentLabel.text = "Hello darkness my old friend. \nI've come to play with you again. Because a softly sleeping."
         
         return cell
     }
@@ -51,4 +50,7 @@ class TimelineViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func logoutClicked() {
+        TwitterClient.shared.logOut()
+    }
 }

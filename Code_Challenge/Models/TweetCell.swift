@@ -11,9 +11,9 @@ import UIKit
 class TweetCell: UITableViewCell {
     
     //MARK: - Cell Subviews
-    lazy var userLabel = FlexLabel(type: .short)
+    var userLabel = FlexLabel(type: .short)
     
-    lazy var contentLabel = FlexLabel(type: .long)
+    var contentLabel = FlexLabel(type: .long)
     
     lazy var textStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [userLabel, contentLabel])
