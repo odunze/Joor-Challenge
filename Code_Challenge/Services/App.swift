@@ -32,7 +32,7 @@ enum Page {
     var vc: UIViewController {
         switch self {
         case .login:
-            let viewController = EntryViewController()
+            let viewController = LoginViewController()
             return viewController
         case .timeline:
             let viewmodel = TimelineViewModel()

@@ -1,5 +1,5 @@
 //
-//  EntryViewController.swift
+//  LoginViewController.swift
 //  Code_Challenge
 //
 //  Created by Lotanna Igwe-Odunze on 10/29/19.
@@ -8,15 +8,23 @@
 
 import UIKit
 
-class EntryViewController: UIViewController {
+class LoginViewController: UIViewController {
     
+    //MARK: - Subviews
     lazy var userField: UITextField = {
         let field = UITextField(frame: .zero)
+        field.placeholder = "Enter your Username"
+        field.backgroundColor = .white
+        field.autocapitalizationType = .none
         return field
     }()
     
     lazy var passField: UITextField = {
         let field = UITextField(frame: .zero)
+        field.placeholder = "Enter your Password"
+        field.backgroundColor = .white
+        field.autocapitalizationType = .none
+
         return field
     }()
     
@@ -39,11 +47,14 @@ class EntryViewController: UIViewController {
     
     @objc func loginClicked(sender: UIButton!) {
         
-//        guard let username = userField.text, let password = passField.text else { return }
-//
-//        TwitterClient.shared.logIn(username: username, password: password)
-        
-        self.present(App.shared.navigation, animated: true, completion: nil)
+        guard let username = userField.text, let password = passField.text else { return }
+        print(TwitterClient.shared.isLoggedIn.value)
+
+        TwitterClient.shared.logIn(username: username, password: password)
+        print(TwitterClient.shared.isLoggedIn.value)
+
+        if TwitterClient.shared.isLoggedIn.value == true {
+            present(App.shared.navigation, animated: true, completion: nil) }
     }
     
     //MARK: - Initialisers

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C43DDC62369083E00B0846A /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDC52369083E00B0846A /* EntryViewController.swift */; };
+		4C43DDC62369083E00B0846A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDC52369083E00B0846A /* LoginViewController.swift */; };
 		4C43DDC82369084900B0846A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDC72369084900B0846A /* TimelineViewController.swift */; };
 		4C43DDCC23690A7700B0846A /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDCB23690A7700B0846A /* TweetCell.swift */; };
 		4C43DDCE2369142000B0846A /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDCD2369142000B0846A /* UIView+Ext.swift */; };
@@ -40,7 +40,7 @@
 		14F46FAF755E96297A510954 /* Pods-Code_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Code_ChallengeTests/Pods-Code_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		385D79663CE46FFC87CE2F2A /* Pods_Code_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		400A043A277466E1A85EDEBF /* Pods-Code_ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-Code_ChallengeTests/Pods-Code_ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4C43DDC52369083E00B0846A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		4C43DDC52369083E00B0846A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C43DDC72369084900B0846A /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		4C43DDCB23690A7700B0846A /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		4C43DDCD2369142000B0846A /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -82,12 +82,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C43DDC92369086100B0846A /* Entry */ = {
+		4C43DDC92369086100B0846A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4C43DDC52369083E00B0846A /* EntryViewController.swift */,
+				4C43DDC52369083E00B0846A /* LoginViewController.swift */,
 			);
-			path = Entry;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4C43DDCA23690A4400B0846A /* Timeline */ = {
@@ -141,13 +141,12 @@
 			isa = PBXGroup;
 			children = (
 				E5391C1621AB788E0052B1EA /* AppDelegate.swift */,
-				4C43DDCF2369142D00B0846A /* Extensions */,
-				4C43DDC92369086100B0846A /* Entry */,
-				4C43DDCA23690A4400B0846A /* Timeline */,
 				E5391C3A21AB799D0052B1EA /* Models */,
+				4C43DDC92369086100B0846A /* Login */,
+				4C43DDCA23690A4400B0846A /* Timeline */,
 				E5391C3B21AB79A40052B1EA /* Services */,
+				4C43DDCF2369142D00B0846A /* Extensions */,
 				E5391C3621AB789E0052B1EA /* Resources */,
-				4C43DDD423691F4100B0846A /* App.swift */,
 			);
 			path = Code_Challenge;
 			sourceTree = "<group>";
@@ -184,6 +183,7 @@
 		E5391C3B21AB79A40052B1EA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4C43DDD423691F4100B0846A /* App.swift */,
 				E5391C3C21AB79D10052B1EA /* TwitterClient.swift */,
 			);
 			path = Services;
@@ -405,7 +405,7 @@
 			files = (
 				E5391C3F21AB79D80052B1EA /* Tweet.swift in Sources */,
 				4C43DDD1236915B300B0846A /* FlexLabel.swift in Sources */,
-				4C43DDC62369083E00B0846A /* EntryViewController.swift in Sources */,
+				4C43DDC62369083E00B0846A /* LoginViewController.swift in Sources */,
 				4C43DDD523691F4100B0846A /* App.swift in Sources */,
 				4C7EBF5E23695D2A0061991A /* UIColor+Ext.swift in Sources */,
 				E5391C3D21AB79D10052B1EA /* TwitterClient.swift in Sources */,
