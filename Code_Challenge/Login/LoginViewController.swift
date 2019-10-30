@@ -11,22 +11,9 @@ import UIKit
 class LoginViewController: UIViewController {
     
     //MARK: - Subviews
-    lazy var userField: UITextField = {
-        let field = UITextField(frame: .zero)
-        field.placeholder = "Enter your Username"
-        field.backgroundColor = .white
-        field.autocapitalizationType = .none
-        return field
-    }()
+    lazy var userField = EntryField(type: .username)
     
-    lazy var passField: UITextField = {
-        let field = UITextField(frame: .zero)
-        field.placeholder = "Enter your Password"
-        field.backgroundColor = .white
-        field.autocapitalizationType = .none
-
-        return field
-    }()
+    lazy var passField = EntryField(type: .password)
     
     lazy var loginButton: UIButton = {
         let button = UIButton(frame: .zero)
@@ -48,10 +35,8 @@ class LoginViewController: UIViewController {
     @objc func loginClicked(sender: UIButton!) {
         
         guard let username = userField.text, let password = passField.text else { return }
-        print(TwitterClient.shared.isLoggedIn.value)
 
         TwitterClient.shared.logIn(username: username, password: password)
-        print(TwitterClient.shared.isLoggedIn.value)
 
         if TwitterClient.shared.isLoggedIn.value == true {
             present(App.shared.navigation, animated: true, completion: nil) }
