@@ -7,8 +7,8 @@
 //
 
 @testable import Code_Challenge
-import Nimble
 import Quick
+import Nimble
 
 class TwitterClientSpec: QuickSpec {}
 

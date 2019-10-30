@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C30ABC0236A2F470016033D /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30ABBF236A2F470016033D /* LoginViewControllerSpec.swift */; };
+		4C30ABC2236A36680016033D /* TimelineViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30ABC1236A36680016033D /* TimelineViewControllerSpec.swift */; };
+		4C30ABC4236A368C0016033D /* TimelineViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30ABC3236A368C0016033D /* TimelineViewModelSpec.swift */; };
 		4C43DDC62369083E00B0846A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDC52369083E00B0846A /* LoginViewController.swift */; };
 		4C43DDC82369084900B0846A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDC72369084900B0846A /* TimelineViewController.swift */; };
 		4C43DDCC23690A7700B0846A /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDCB23690A7700B0846A /* TweetCell.swift */; };
@@ -42,6 +45,9 @@
 		14F46FAF755E96297A510954 /* Pods-Code_ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-Code_ChallengeTests/Pods-Code_ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		385D79663CE46FFC87CE2F2A /* Pods_Code_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		400A043A277466E1A85EDEBF /* Pods-Code_ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-Code_ChallengeTests/Pods-Code_ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C30ABBF236A2F470016033D /* LoginViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSpec.swift; sourceTree = "<group>"; };
+		4C30ABC1236A36680016033D /* TimelineViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewControllerSpec.swift; sourceTree = "<group>"; };
+		4C30ABC3236A368C0016033D /* TimelineViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModelSpec.swift; sourceTree = "<group>"; };
 		4C43DDC52369083E00B0846A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C43DDC72369084900B0846A /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		4C43DDCB23690A7700B0846A /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
@@ -198,6 +204,9 @@
 		E5391C4021AB79E30052B1EA /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				4C30ABBF236A2F470016033D /* LoginViewControllerSpec.swift */,
+				4C30ABC1236A36680016033D /* TimelineViewControllerSpec.swift */,
+				4C30ABC3236A368C0016033D /* TimelineViewModelSpec.swift */,
 				E5391C4221AB79F10052B1EA /* Services */,
 			);
 			path = Tests;
@@ -429,7 +438,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30ABC4236A368C0016033D /* TimelineViewModelSpec.swift in Sources */,
 				E5391C4621AB7A180052B1EA /* TwitterClientSpec.swift in Sources */,
+				4C30ABC0236A2F470016033D /* LoginViewControllerSpec.swift in Sources */,
+				4C30ABC2236A36680016033D /* TimelineViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
