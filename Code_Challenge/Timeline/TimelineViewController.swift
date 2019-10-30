@@ -10,5 +10,10 @@ import UIKit
 
 class TimelineViewController: UITableViewController {
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.register(TweetCell.self, forCellReuseIdentifier: "tweetCell")
+    }
     
 }

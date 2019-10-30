@@ -8,4 +8,22 @@
 
 import UIKit
 
-
+class TweetCell: UITableViewCell {
+    lazy var userLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        
+        return label
+    }()
+    
+    lazy var contentLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        
+        return label
+    }()
+    
+    lazy var avatarView: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        
+        return view
+    }()
+}
