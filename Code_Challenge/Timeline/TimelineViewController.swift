@@ -17,8 +17,9 @@ class TimelineViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.rightBarButtonItem = vm.logoutButton
-        
+        navigationItem.rightBarButtonItem = vm.logoutButton
+        navigationItem.hidesBackButton = true
+
         tableView.register(TweetCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.rowHeight = 120
         tableView.reloadData()
