@@ -12,9 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Subviews
     lazy var userField = EntryField(type: .username)
-    
     lazy var passField = EntryField(type: .password)
-    
     lazy var loginButton = StyledButton(enabled: false)
     
     lazy var container: UIStackView = {
@@ -26,12 +24,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     //MARK: - View Lifecycle Methods
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-
     }
+    
     override func viewDidLoad() {
         userField.delegate = self
         passField.delegate = self
@@ -44,7 +41,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        
     }
     
     //MARK: - Initialisers
@@ -85,6 +81,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         TwitterClient.shared.logIn(username: username, password: password)
         
         if TwitterClient.shared.isLoggedIn.value == true {
-            present(App.shared.navigation, animated: true, completion: nil) }
+            App.shared.navigate(to: .timeline) }
     }
 }

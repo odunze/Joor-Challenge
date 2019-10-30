@@ -20,8 +20,8 @@ class App {
     }
     
     init() {
-        homeView = Page.login.vc
-        navigation = UINavigationController(rootViewController: Page.timeline.vc)
+        navigation = UINavigationController(rootViewController: Page.login.vc)
+        homeView = navigation
     }
 }
 
