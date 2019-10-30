@@ -15,14 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     lazy var passField = EntryField(type: .password)
     
-    lazy var loginButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .green
-        button.setTitle("LOGIN HERE", for: .normal)
-        button.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
-        return button
-    }()
+    lazy var loginButton = StyledButton(enabled: false)
     
     lazy var container: UIStackView = {
         let stack = UIStackView(frame: .zero)
@@ -36,14 +29,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userField.delegate = self
         passField.delegate = self
         
+        loginButton.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
         userField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         passField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
     }
     
     //check that fields aren't empty
-    
     @objc func validateFields() {
         loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 1
+        loginButton.update()
+
     }
     
     @objc func loginClicked(sender: UIButton!) {
