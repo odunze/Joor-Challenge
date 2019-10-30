@@ -35,7 +35,8 @@ enum Page {
             let viewController = EntryViewController()
             return viewController
         case .timeline:
-            let viewController = TimelineViewController()
+            let viewmodel = TimelineViewModel()
+            let viewController = TimelineViewController(app: App.shared, viewmodel: viewmodel)
             return viewController
         }
     }

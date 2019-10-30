@@ -10,5 +10,49 @@ import UIKit
 
 class EntryViewController: UIViewController {
     
+    lazy var userField: UITextField = {
+        let field = UITextField(frame: .zero)
+        return field
+    }()
     
+    lazy var passField: UITextField = {
+        let field = UITextField(frame: .zero)
+        return field
+    }()
+    
+    lazy var loginButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: view.frame.size.width - 60, y: 60, width: 50, height: 50))
+        button.backgroundColor = .green
+        button.setTitle("LOGIN HERE", for: .normal)
+        button.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var container: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.axis = .vertical
+        return stack
+    }()
+    
+    @objc func loginClicked(sender: UIButton!) {
+        
+//        guard let username = userField.text, let password = passField.text else { return }
+//
+//        TwitterClient.shared.logIn(username: username, password: password)
+        
+        App.shared.navigate(to: .timeline)
+    }
+    
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        view.addSubview(loginButton)
+        
+        view.backgroundColor = .blue
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

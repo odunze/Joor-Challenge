@@ -12,15 +12,27 @@ class TimelineViewController: UITableViewController {
     
     var vm: TimelineViewModel!
     
+    var app: App!
+    
+    let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logoutClicked))
+    
+    @objc func logoutClicked() {
+        TwitterClient.shared.logOut()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        app.navigation.navigationItem.rightBarButtonItem = logoutButton
+        
         tableView.register(TweetCell.self, forCellReuseIdentifier: "tweetCell")
         tableView.rowHeight = 85
+        
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return vm.tweets.count
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -29,6 +41,17 @@ class TimelineViewController: UITableViewController {
         cell.contentLabel.text = "Hello darkness my old friend. I've come to play with you again. Because a softly sleeping."
         
         return cell
+    }
+    
+    init(app: App, viewmodel: TimelineViewModel) {
+        self.app = app
+        self.vm = viewmodel
+        super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = .white
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
