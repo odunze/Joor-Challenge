@@ -25,6 +25,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return stack
     }()
     
+    //MARK: - View Lifecycle Methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+
+    }
     override func viewDidLoad() {
         userField.delegate = self
         passField.delegate = self
@@ -34,34 +41,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
     }
     
-    //check that fields aren't empty
-    @objc func validateFields() {
-        loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 1
-        loginButton.update()
-
-    }
-    
-    @objc func loginClicked(sender: UIButton!) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
         
-        guard let username = userField.text, let password = passField.text else { return }
-
-        TwitterClient.shared.logIn(username: username, password: password)
-
-        if TwitterClient.shared.isLoggedIn.value == true {
-            present(App.shared.navigation, animated: true, completion: nil) }
     }
     
     //MARK: - Initialisers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        view.backgroundColor = .twitterBlue
+
         container.addArrangedSubview(userField)
         container.addArrangedSubview(passField)
         container.addArrangedSubview(loginButton)
 
         view.addSubview(container)
-        
-        view.backgroundColor = .twitterBlue
-        
         setConstraints()
     }
     
@@ -75,5 +70,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         container.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         container.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         container.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+    }
+    
+    //check that fields aren't empty
+    @objc func validateFields() {
+        loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 1
+        loginButton.update()
+    }
+    
+    @objc func loginClicked(sender: UIButton!) {
+        
+        guard let username = userField.text, let password = passField.text else { return }
+        
+        TwitterClient.shared.logIn(username: username, password: password)
+        
+        if TwitterClient.shared.isLoggedIn.value == true {
+            present(App.shared.navigation, animated: true, completion: nil) }
     }
 }

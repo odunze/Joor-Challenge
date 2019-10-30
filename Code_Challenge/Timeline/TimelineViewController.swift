@@ -12,6 +12,7 @@ class TimelineViewController: UITableViewController {
     
     var vm: TimelineViewModel!
     
+    //MARK: - View Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

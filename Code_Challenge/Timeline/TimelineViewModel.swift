@@ -10,12 +10,14 @@ import UIKit
 
 class TimelineViewModel {
     
-    var tweets: [Tweet] = TwitterClient.shared.loadTimeline()
+    lazy var tweets: [Tweet] = TwitterClient.shared.loadTimeline()
     
     lazy var logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logoutClicked))
     
     @objc func logoutClicked() {
         TwitterClient.shared.logOut()
-        
+        if TwitterClient.shared.isLoggedIn.value == false {
+            App.shared.navigate(to: .login)
+        }
     }
 }
