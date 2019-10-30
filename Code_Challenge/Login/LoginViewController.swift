@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Subviews
     lazy var userField = EntryField(type: .username)
@@ -31,6 +31,20 @@ class LoginViewController: UIViewController {
         stack.spacing = 10
         return stack
     }()
+    
+    override func viewDidLoad() {
+        userField.delegate = self
+        passField.delegate = self
+        
+        userField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+        passField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
+    }
+    
+    //check that fields aren't empty
+    
+    @objc func validateFields() {
+        loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 1
+    }
     
     @objc func loginClicked(sender: UIButton!) {
         
