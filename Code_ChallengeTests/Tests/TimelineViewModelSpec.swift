@@ -30,6 +30,9 @@ class TimelineViewModelSpec: QuickSpec {
                 it("loads an array of tweets") {
                     expect(vm.tweets).toNot(beNil())
                 }
+                it("loads all the tweets") {
+                    expect(vm.tweets.count).to(equal(32))
+                }
                 it("creates a logout bar button") {
                     expect(vm.logoutButton).toNot(beNil())
                 }

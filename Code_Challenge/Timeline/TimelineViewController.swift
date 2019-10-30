@@ -11,6 +11,7 @@ import UIKit
 class TimelineViewController: UITableViewController {
     
     var vm: TimelineViewModel!
+    lazy var cellIdentifier = "tweetCell"
     
     //MARK: - View Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -18,7 +19,7 @@ class TimelineViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = vm.logoutButton
         
-        tableView.register(TweetCell.self, forCellReuseIdentifier: "tweetCell")
+        tableView.register(TweetCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.rowHeight = 120
         tableView.reloadData()
     }
@@ -29,7 +30,7 @@ class TimelineViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TweetCell
         
         cell.userLabel.text = vm.tweets[indexPath.row].user
         cell.contentLabel.text = vm.tweets[indexPath.row].content
