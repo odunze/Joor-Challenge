@@ -46,7 +46,7 @@ class EntryViewController: UIViewController {
         self.present(App.shared.navigation, animated: true, completion: nil)
     }
     
-    
+    //MARK: - Initialisers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         container.addArrangedSubview(userField)
@@ -64,9 +64,8 @@ class EntryViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Constraints
     func setConstraints() {
-        //Container
-       
         container.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         container.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         container.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
