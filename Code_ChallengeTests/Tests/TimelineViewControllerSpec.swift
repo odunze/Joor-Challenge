@@ -37,10 +37,6 @@ class TimelineViewControllerSpec: QuickSpec {
                     expect(testCell.userLabel.text).to(equal(vm.tweets[testIndex.row].user))
                     expect(testCell.contentLabel.text).to(equal(vm.tweets[testIndex.row].content))
                 }
-                
-                it("shows a logout button") {
-                    expect(vc.navigationItem.rightBarButtonItem).to(equal(vm.logoutButton))
-                }
             }
         }
     }

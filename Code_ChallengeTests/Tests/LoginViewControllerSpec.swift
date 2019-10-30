@@ -16,10 +16,11 @@ class LoginViewControllerSpec: QuickSpec {
     override func spec() {
         var vc: LoginViewController!
         var client: TwitterClient!
-        
+
         beforeEach {
             vc = LoginViewController(nibName: nil, bundle: nil)
             client = TwitterClient.shared
+            client.isLoggedIn.value = false
         }
         
         describe("Login flow") {

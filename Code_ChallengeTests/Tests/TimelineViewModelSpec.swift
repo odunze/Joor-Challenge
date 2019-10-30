@@ -20,13 +20,12 @@ class TimelineViewModelSpec: QuickSpec {
         beforeEach {
             vm = TimelineViewModel()
             client = TwitterClient.shared
+            client.isLoggedIn.value = true
         }
         
         describe("Data") {
             context("tweets are loaded") {
-                beforeEach {
-                    
-                }
+
                 it("loads an array of tweets") {
                     expect(vm.tweets).toNot(beNil())
                 }
