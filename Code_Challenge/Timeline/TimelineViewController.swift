@@ -12,8 +12,6 @@ class TimelineViewController: UITableViewController {
     
     var vm: TimelineViewModel!
     
-    var app: App!
-    
     let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logoutClicked))
     
     @objc func logoutClicked() {
@@ -23,7 +21,7 @@ class TimelineViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        app.navigation.navigationItem.rightBarButtonItem = logoutButton
+        App.shared.navigation.navigationItem.rightBarButtonItem = logoutButton
         
         tableView.register(TweetCell.self, forCellReuseIdentifier: "tweetCell")
         tableView.rowHeight = 85
@@ -43,8 +41,7 @@ class TimelineViewController: UITableViewController {
         return cell
     }
     
-    init(app: App, viewmodel: TimelineViewModel) {
-        self.app = app
+    init(viewmodel: TimelineViewModel) {
         self.vm = viewmodel
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white

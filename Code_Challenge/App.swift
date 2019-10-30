@@ -21,7 +21,7 @@ class App {
     
     init() {
         homeView = Page.login.vc
-        navigation = UINavigationController(rootViewController: homeView)
+        navigation = UINavigationController(rootViewController: Page.timeline.vc)
     }
 }
 
@@ -36,7 +36,7 @@ enum Page {
             return viewController
         case .timeline:
             let viewmodel = TimelineViewModel()
-            let viewController = TimelineViewController(app: App.shared, viewmodel: viewmodel)
+            let viewController = TimelineViewController(viewmodel: viewmodel)
             return viewController
         }
     }

@@ -21,7 +21,7 @@ class EntryViewController: UIViewController {
     }()
     
     lazy var loginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.frame.size.width - 60, y: 60, width: 50, height: 50))
+        let button = UIButton(frame: CGRect(x: 60, y: 60, width: 200, height: 50))
         button.backgroundColor = .green
         button.setTitle("LOGIN HERE", for: .normal)
         button.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
@@ -40,7 +40,7 @@ class EntryViewController: UIViewController {
 //
 //        TwitterClient.shared.logIn(username: username, password: password)
         
-        App.shared.navigate(to: .timeline)
+        self.present(App.shared.navigation, animated: true, completion: nil)
     }
     
     
