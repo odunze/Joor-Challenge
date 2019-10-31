@@ -10,16 +10,20 @@ import UIKit
 
 class StyledButton: UIButton {
     
-    func update() {
+    override func setNeedsLayout() {
+        super.setNeedsLayout()
+        
+        layer.cornerRadius = 5.0
+        
         switch state {
         case .normal:
-            backgroundColor = .green
-            setTitleColor(.black, for: .normal)
-            setTitle("LOGIN HERE", for: .normal)
+            backgroundColor = .white
+            setTitleColor(.twitterBlue, for: .normal)
+            setTitle("LOGIN", for: .normal)
         case .disabled:
             backgroundColor = .lightGray
             setTitleColor(.darkGray, for: .disabled)
-            setTitle("Enter More", for: .disabled)
+            setTitle("ENTER YOUR CREDENTIALS", for: .disabled)
         default:
             break
         }
@@ -28,11 +32,9 @@ class StyledButton: UIButton {
     init(enabled: Bool) {
         super.init(frame: .zero)
         isEnabled = enabled
-        update()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

@@ -18,6 +18,8 @@
 		4C43DDD323691C3B00B0846A /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDD223691C3B00B0846A /* TimelineViewModel.swift */; };
 		4C43DDD523691F4100B0846A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43DDD423691F4100B0846A /* App.swift */; };
 		4C7EBF5E23695D2A0061991A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EBF5D23695D2A0061991A /* UIColor+Ext.swift */; };
+		4CA72CE4236AA20200CD0E3B /* PageRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA72CE3236AA20200CD0E3B /* PageRouting.swift */; };
+		4CA72CE6236AA21700CD0E3B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA72CE5236AA21700CD0E3B /* Theme.swift */; };
 		4CAF9EEB23696A3A006D0DB7 /* EntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF9EEA23696A3A006D0DB7 /* EntryField.swift */; };
 		4CAF9EED23697A8E006D0DB7 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAF9EEC23697A8E006D0DB7 /* StyledButton.swift */; };
 		E39AD7CD50228EC0EFF63D84 /* Pods_Code_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCB362D8C5DED6F5762BA72 /* Pods_Code_ChallengeTests.framework */; };
@@ -56,6 +58,8 @@
 		4C43DDD223691C3B00B0846A /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		4C43DDD423691F4100B0846A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		4C7EBF5D23695D2A0061991A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		4CA72CE3236AA20200CD0E3B /* PageRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageRouting.swift; sourceTree = "<group>"; };
+		4CA72CE5236AA21700CD0E3B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4CAF9EEA23696A3A006D0DB7 /* EntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryField.swift; sourceTree = "<group>"; };
 		4CAF9EEC23697A8E006D0DB7 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		6CAC04A367E1D7BC7BBC45DC /* Pods-Code_Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code_Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Code_Challenge/Pods-Code_Challenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				4C43DDD423691F4100B0846A /* App.swift */,
+				4CA72CE5236AA21700CD0E3B /* Theme.swift */,
+				4CA72CE3236AA20200CD0E3B /* PageRouting.swift */,
 				E5391C3C21AB79D10052B1EA /* TwitterClient.swift */,
 			);
 			path = Services;
@@ -425,10 +431,12 @@
 				4C43DDD523691F4100B0846A /* App.swift in Sources */,
 				4C7EBF5E23695D2A0061991A /* UIColor+Ext.swift in Sources */,
 				E5391C3D21AB79D10052B1EA /* TwitterClient.swift in Sources */,
+				4CA72CE4236AA20200CD0E3B /* PageRouting.swift in Sources */,
 				4C43DDCC23690A7700B0846A /* TweetCell.swift in Sources */,
 				4C43DDCE2369142000B0846A /* UIView+Ext.swift in Sources */,
 				E5391C1721AB788E0052B1EA /* AppDelegate.swift in Sources */,
 				4C43DDD323691C3B00B0846A /* TimelineViewModel.swift in Sources */,
+				4CA72CE6236AA21700CD0E3B /* Theme.swift in Sources */,
 				4C43DDC82369084900B0846A /* TimelineViewController.swift in Sources */,
 				4CAF9EED23697A8E006D0DB7 /* StyledButton.swift in Sources */,
 			);

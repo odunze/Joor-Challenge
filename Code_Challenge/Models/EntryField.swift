@@ -12,24 +12,26 @@ class EntryField: UITextField {
     
     var type: FieldType
     
-    func configure() {
+    override func setNeedsLayout() {
+        super.setNeedsLayout()
+        
+        autocapitalizationType = .none
+        adjustsFontSizeToFitWidth = true
+        
+        borderStyle = .roundedRect
+        backgroundColor = .white
+        
         switch type {
         case .username:
             placeholder = "Enter your Username"
-
         case .password:
             placeholder = "Enter your Password"
-
         }
     }
     
     init(type: FieldType) {
         self.type = type
         super.init(frame: .zero)
-        
-        backgroundColor = .white
-        autocapitalizationType = .none
-        configure()
     }
     
     required init?(coder aDecoder: NSCoder) {

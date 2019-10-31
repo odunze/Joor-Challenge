@@ -24,30 +24,3 @@ class App {
         homeView = navigation
     }
 }
-
-enum Page {
-    case login
-    case timeline
-    
-    var vc: UIViewController {
-        switch self {
-        case .login:
-            let viewController = LoginViewController()
-            return viewController
-        case .timeline:
-            let viewmodel = TimelineViewModel()
-            let viewController = TimelineViewController(viewmodel: viewmodel)
-            return viewController
-        }
-    }
-}
-
-enum Theme {
-    
-    static var roundedCorner: CGFloat = 10.0
-    
-    static var placeholder: UIImage {
-        let image = UIImage(named: "lotanna")
-        return image!
-    }
-}

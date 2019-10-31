@@ -14,6 +14,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     lazy var userField = EntryField(type: .username)
     lazy var passField = EntryField(type: .password)
     lazy var loginButton = StyledButton(enabled: false)
+    lazy var logoView: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        view.image = Theme.logo
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
     
     lazy var container: UIStackView = {
         let stack = UIStackView(frame: .zero)
@@ -48,9 +54,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         view.backgroundColor = .twitterBlue
 
+        container.addArrangedSubview(logoView)
         container.addArrangedSubview(userField)
         container.addArrangedSubview(passField)
         container.addArrangedSubview(loginButton)
+        
+        container.setCustomSpacing(40.0, after: logoView)
 
         view.addSubview(container)
         setConstraints()
@@ -71,7 +80,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //check that fields aren't empty
     @objc func validateFields() {
         loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 1
-        loginButton.update()
     }
     
     @objc func loginClicked(sender: UIButton!) {
