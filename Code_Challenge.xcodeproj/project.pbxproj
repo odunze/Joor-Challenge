@@ -122,6 +122,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4C56335F236AB9CB0080630A /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C43DDD0236915B300B0846A /* FlexLabel.swift */,
+				4CAF9EEA23696A3A006D0DB7 /* EntryField.swift */,
+				4CAF9EEC23697A8E006D0DB7 /* StyledButton.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		A52B02F3C455D3E6A617D8B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,9 +199,7 @@
 			children = (
 				E5391C3E21AB79D80052B1EA /* Tweet.swift */,
 				4C43DDCB23690A7700B0846A /* TweetCell.swift */,
-				4C43DDD0236915B300B0846A /* FlexLabel.swift */,
-				4CAF9EEA23696A3A006D0DB7 /* EntryField.swift */,
-				4CAF9EEC23697A8E006D0DB7 /* StyledButton.swift */,
+				4C56335F236AB9CB0080630A /* Custom Views */,
 			);
 			path = Models;
 			sourceTree = "<group>";

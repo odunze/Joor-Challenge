@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let stack = UIStackView(frame: .zero)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = 10
+        stack.spacing = Theme.medspace
         return stack
     }()
     
@@ -79,7 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //check that fields aren't empty
     @objc func validateFields() {
-        loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 1
+        loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 3
     }
     
     @objc func loginClicked(sender: UIButton!) {

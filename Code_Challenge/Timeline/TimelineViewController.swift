@@ -19,6 +19,7 @@ class TimelineViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = vm.logoutButton
         navigationItem.hidesBackButton = true
+        title = "Timeline"
 
         tableView.register(TweetCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.rowHeight = 124
@@ -32,6 +33,18 @@ class TimelineViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TweetCell
+        
+        switch indexPath.row % 2 == 0 {
+        case true:
+            cell.backgroundColor = .twitterBlue
+            cell.userLabel.textColor = .white
+            cell.contentLabel.textColor = .white
+
+        default:
+            cell.backgroundColor = .twitterLightBlue
+            cell.userLabel.textColor = .white
+            cell.contentLabel.textColor = .black
+        }
         
         cell.userLabel.text = vm.tweets[indexPath.row].user
         cell.contentLabel.text = vm.tweets[indexPath.row].content

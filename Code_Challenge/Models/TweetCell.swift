@@ -22,10 +22,10 @@ class TweetCell: UITableViewCell {
     lazy var textStack: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.axis = .vertical
-        stack.spacing = 4
+        stack.spacing = Theme.smspace
         stack.distribution = .fill
         stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        stack.layoutMargins = UIEdgeInsets(top: Theme.smspace, left: Theme.smspace, bottom: Theme.smspace, right: Theme.smspace)
         return stack
     }()
     
@@ -39,10 +39,10 @@ class TweetCell: UITableViewCell {
     lazy var container: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.axis = .horizontal
-        stack.spacing = 20
+        stack.spacing = Theme.lgSpace
         stack.alignment = .top
         stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 6, right: 20)
+        stack.layoutMargins = UIEdgeInsets(top: Theme.medspace, left: Theme.lgSpace, bottom: Theme.medspace, right: Theme.lgSpace)
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -50,7 +50,8 @@ class TweetCell: UITableViewCell {
     //MARK: - Initialisers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
+        userLabel.font = Theme.titleFont
         textStack.addArrangedSubview(userLabel)
         textStack.addArrangedSubview(contentLabel)
         container.addArrangedSubview(avatarView)

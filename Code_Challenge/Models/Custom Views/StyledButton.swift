@@ -19,11 +19,11 @@ class StyledButton: UIButton {
         case .normal:
             backgroundColor = .white
             setTitleColor(.twitterBlue, for: .normal)
-            setTitle("LOGIN", for: .normal)
+            setTitle("LET'S GO!!!", for: .normal)
         case .disabled:
             backgroundColor = .lightGray
             setTitleColor(.darkGray, for: .disabled)
-            setTitle("ENTER YOUR CREDENTIALS", for: .disabled)
+            setTitle("PLEASE LOG IN", for: .disabled)
         default:
             break
         }

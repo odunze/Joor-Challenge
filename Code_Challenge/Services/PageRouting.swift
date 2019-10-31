@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Page {
+enum Page { //I can extend this by adding new cases.
     case login
     case timeline
     

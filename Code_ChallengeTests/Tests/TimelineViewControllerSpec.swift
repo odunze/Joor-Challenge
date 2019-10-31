@@ -36,6 +36,8 @@ class TimelineViewControllerSpec: QuickSpec {
                     let testCell = vc.tableView(vc.tableView, cellForRowAt: testIndex) as! TweetCell
                     expect(testCell.userLabel.text).to(equal(vm.tweets[testIndex.row].user))
                     expect(testCell.contentLabel.text).to(equal(vm.tweets[testIndex.row].content))
+                    
+                    expect(testCell.backgroundColor).to(equal(.twitterBlue))
                 }
             }
         }
