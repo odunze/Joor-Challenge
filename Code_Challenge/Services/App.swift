@@ -11,7 +11,7 @@ import UIKit
 class App {
     static let shared = App()
     
-    var homeView: UIViewController
+    var homeView: UIViewController //This makes it easy to switch out the app entrypoint.
     
     var navigation: UINavigationController
     

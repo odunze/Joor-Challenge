@@ -10,25 +10,6 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    //MARK: - Subviews
-    lazy var userField = EntryField(type: .username)
-    lazy var passField = EntryField(type: .password)
-    lazy var loginButton = StyledButton(enabled: false)
-    lazy var logoView: UIImageView = {
-        let view = UIImageView(frame: .zero)
-        view.image = Theme.logo
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
-    
-    lazy var container: UIStackView = {
-        let stack = UIStackView(frame: .zero)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = Theme.medspace
-        return stack
-    }()
-    
     //MARK: - View Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,6 +29,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    //MARK: - Subviews
+    lazy var userField = EntryField(type: .username)
+    lazy var passField = EntryField(type: .password)
+    lazy var loginButton = StyledButton(enabled: false)
+    lazy var logoView: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        view.image = Theme.logo
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
+    lazy var container: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = Theme.medspace
+        return stack
+    }()
     
     //MARK: - Initialisers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         container.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
     }
     
-    //check that fields aren't empty
+    //check that the fields aren't empty
     @objc func validateFields() {
         loginButton.isEnabled = userField.text?.count ?? 0 > 1 && passField.text?.count ?? 0 > 3
     }

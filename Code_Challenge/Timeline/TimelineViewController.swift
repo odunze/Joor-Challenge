@@ -10,9 +10,6 @@ import UIKit
 
 class TimelineViewController: UITableViewController {
     
-    var vm: TimelineViewModel!
-    lazy var cellIdentifier = "tweetCell"
-    
     //MARK: - View Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -20,11 +17,15 @@ class TimelineViewController: UITableViewController {
         navigationItem.rightBarButtonItem = vm.logoutButton
         navigationItem.hidesBackButton = true
         title = "Timeline"
-
+        
         tableView.register(TweetCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.rowHeight = 124
         tableView.reloadData()
     }
+    
+    //MARK: - Properties
+    var vm: TimelineViewModel!
+    lazy var cellIdentifier = "tweetCell"
     
     //MARK: - Table View Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

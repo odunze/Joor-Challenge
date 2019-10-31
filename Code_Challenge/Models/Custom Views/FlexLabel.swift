@@ -14,7 +14,6 @@ enum Length {
 }
 
 class FlexLabel: UILabel {
-    var type: Length
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -28,6 +27,8 @@ class FlexLabel: UILabel {
             numberOfLines = 4
         }
     }
+    
+    var type: Length
     
     init(type: Length) {
         self.type = type

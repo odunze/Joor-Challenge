@@ -10,8 +10,6 @@ import UIKit
 
 class EntryField: UITextField {
     
-    var type: FieldType
-    
     override func setNeedsLayout() {
         super.setNeedsLayout()
         
@@ -28,6 +26,8 @@ class EntryField: UITextField {
             placeholder = "Enter your Password"
         }
     }
+    
+    var type: FieldType
     
     init(type: FieldType) {
         self.type = type

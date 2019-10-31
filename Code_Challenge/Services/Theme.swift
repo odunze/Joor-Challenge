@@ -12,13 +12,14 @@ enum Theme {
     
     static var roundedCorner: CGFloat = 10.0
     
+    static var titleFont = UIFont(name: "Helvetica-Bold", size: 18)
+    
+    //Keeping spacing consistent.
     static var smspace: CGFloat = 4.0
     
     static var medspace: CGFloat = 10.0
 
     static var lgSpace: CGFloat = 20.0
-    
-    static var titleFont = UIFont(name: "Helvetica-Bold", size: 18)
     
     static var placeholder: UIImage {
         let image = UIImage(named: "lotanna")
