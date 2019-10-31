@@ -21,7 +21,7 @@ class TimelineViewController: UITableViewController {
         navigationItem.hidesBackButton = true
 
         tableView.register(TweetCell.self, forCellReuseIdentifier: cellIdentifier)
-        tableView.rowHeight = 200
+        tableView.rowHeight = 120
         tableView.reloadData()
     }
     

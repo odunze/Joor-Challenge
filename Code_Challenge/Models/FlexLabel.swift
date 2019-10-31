@@ -18,27 +18,23 @@ class FlexLabel: UILabel {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        translatesAutoresizingMaskIntoConstraints = false
-        preferredMaxLayoutWidth = 260.0
+        preferredMaxLayoutWidth = 280.0
         lineBreakMode = .byWordWrapping
-        textAlignment = .left
 
         switch type {
         case .short:
             numberOfLines = 1
         case .long:
-            numberOfLines = 0
+            numberOfLines = 4
         }
     }
     
     init(type: Length) {
         self.type = type
         super.init(frame: .zero)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
