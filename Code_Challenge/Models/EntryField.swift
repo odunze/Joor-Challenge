@@ -29,7 +29,6 @@ class EntryField: UITextField {
         
         backgroundColor = .white
         autocapitalizationType = .none
-        
         configure()
     }
     

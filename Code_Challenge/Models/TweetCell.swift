@@ -18,10 +18,7 @@ class TweetCell: UITableViewCell {
     lazy var textStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [userLabel, contentLabel])
         stack.axis = .vertical
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.isLayoutMarginsRelativeArrangement = true
-        stack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        stack.spacing = 5
+        stack.distribution = .fillProportionally
         return stack
     }()
     
@@ -35,10 +32,10 @@ class TweetCell: UITableViewCell {
     lazy var container: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [avatarView, textStack])
         stack.axis = .horizontal
+        stack.spacing = 20
         stack.isLayoutMarginsRelativeArrangement = true
+        stack.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.layoutMargins = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-        stack.spacing = 10
         return stack
     }()
     
@@ -59,6 +56,8 @@ class TweetCell: UITableViewCell {
         //Profile Image
         avatarView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         avatarView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        contentLabel.heightAnchor.constraint(equalToConstant: 90).isActive = true
         
         //Container
         container.topAnchor.constraint(equalTo: contentView.topAnchor).isActive =  true

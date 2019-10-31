@@ -16,23 +16,25 @@ enum Length {
 class FlexLabel: UILabel {
     var type: Length
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        translatesAutoresizingMaskIntoConstraints = false
+        preferredMaxLayoutWidth = 260.0
+        lineBreakMode = .byWordWrapping
+        textAlignment = .left
+
+        switch type {
+        case .short:
+            numberOfLines = 1
+        case .long:
+            numberOfLines = 0
+        }
+    }
+    
     init(type: Length) {
         self.type = type
         super.init(frame: .zero)
         
-        //Configure label
-        lineBreakMode = .byWordWrapping
-        textAlignment = .left
-        numberOfLines = 0
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        //Vary multi-line based on length.
-//        switch type {
-//        case .short:
-//            numberOfLines = 1
-//        case .long:
-//            numberOfLines = 0
-//        }
     }
     
     required init?(coder aDecoder: NSCoder) {

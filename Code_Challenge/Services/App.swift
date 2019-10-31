@@ -41,3 +41,13 @@ enum Page {
         }
     }
 }
+
+enum Theme {
+    
+    static var roundedCorner: CGFloat = 10.0
+    
+    static var placeholder: UIImage {
+        let image = UIImage(named: "lotanna")
+        return image!
+    }
+}

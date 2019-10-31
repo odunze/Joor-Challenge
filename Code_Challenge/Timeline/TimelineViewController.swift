@@ -21,7 +21,7 @@ class TimelineViewController: UITableViewController {
         navigationItem.hidesBackButton = true
 
         tableView.register(TweetCell.self, forCellReuseIdentifier: cellIdentifier)
-        tableView.rowHeight = 160
+        tableView.rowHeight = 200
         tableView.reloadData()
     }
     
@@ -35,6 +35,7 @@ class TimelineViewController: UITableViewController {
         
         cell.userLabel.text = vm.tweets[indexPath.row].user
         cell.contentLabel.text = vm.tweets[indexPath.row].content
+        cell.avatarView.image = Theme.placeholder
         
         return cell
     }
