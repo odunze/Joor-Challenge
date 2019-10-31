@@ -18,6 +18,9 @@ class TweetCell: UITableViewCell {
     lazy var textStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [userLabel, contentLabel])
         stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.isLayoutMarginsRelativeArrangement = true
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         stack.spacing = 5
         return stack
     }()

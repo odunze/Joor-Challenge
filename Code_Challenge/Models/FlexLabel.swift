@@ -23,15 +23,16 @@ class FlexLabel: UILabel {
         //Configure label
         lineBreakMode = .byWordWrapping
         textAlignment = .left
+        numberOfLines = 0
         translatesAutoresizingMaskIntoConstraints = false
         
         //Vary multi-line based on length.
-        switch type {
-        case .short:
-            numberOfLines = 0
-        case .long:
-            numberOfLines = 1
-        }
+//        switch type {
+//        case .short:
+//            numberOfLines = 1
+//        case .long:
+//            numberOfLines = 0
+//        }
     }
     
     required init?(coder aDecoder: NSCoder) {
